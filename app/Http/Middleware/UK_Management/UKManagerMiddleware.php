@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Middleware;
+namespace App\Http\Middleware\UK_Management;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;
 use SebastianBergmann\Environment\Runtime;
 
-class AdminMiddleware
+class UKManagerMiddleware
 {
     /**
      * Handle an incoming request.
@@ -17,14 +17,8 @@ class AdminMiddleware
      */
     public function handle($request, Closure $next)
     {
-        // if(Auth::check() && Auth::user()->role_id == 1){
-        //     return $next($request);
-        // }else{
-        //     return redirect()->route('mgt.show.login');
-        // }
-
         if(Auth::check()){
-            if(Auth::user()->role_id == 1){
+            if(Auth::user()->role_id == 2){
                 return $next($request);
             }
         }else{

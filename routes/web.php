@@ -56,10 +56,10 @@ Route::group(['as'=>'mgt.', 'prefix'=>'mgt','namespace'=>'ManagementAuth'], func
     Route::post('password/reset','ResetPasswordController@reset')->name('password.update');
 });
 
-Route::group(['as'=>'uk_management.','prefix'=>'UK-Management','middleware'=>['UK_Management','auth'],'namespace'=>'UK_Management'],function(){
-    Route::get('dashboard','UKManagementController@index')->name('dashboard');
+// Route::group(['as'=>'uk_management.','prefix'=>'UK-Management','middleware'=>['UK_Management','auth'],'namespace'=>'UK_Management'],function(){
+//     Route::get('dashboard','UKManagementController@index')->name('dashboard');
 
-});
+// });
 
 
 

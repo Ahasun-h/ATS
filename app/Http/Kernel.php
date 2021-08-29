@@ -65,7 +65,9 @@ class Kernel extends HttpKernel
 
         // Custom Middleware's
         'Admin' => \App\Http\Middleware\AdminMiddleware::class,
-        'UK_Management' => \App\Http\Middleware\UKManagementmiddleware::class,
+        // 'UK_Management' => \App\Http\Middleware\UKManagementmiddleware::class,
+
+        'UK_Manager' => \App\Http\Middleware\UK_Management\UKManagerMiddleware::class,
 
 
     ];

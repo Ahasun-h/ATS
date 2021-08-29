@@ -17,15 +17,30 @@ class UKManagementmiddleware
      */
     public function handle($request, Closure $next)
     {
-        if(!Auth::check()){
+        // if(!Auth::check()){
 
-            if(!Auth::user()->role_id == 2){
-                return redirect()->route('mgt.show.login');
-            }elseif(!Auth::user()->role_id == 3){
-                return redirect()->route('mgt.show.login');
+        //     if(!Auth::user()->role_id == 2){
+        //         return redirect()->route('mgt.show.login');
+        //     }elseif(!Auth::user()->role_id == 3){
+        //         return redirect()->route('mgt.show.login');
+        //     }
+        // }else{
+        //     return $next($request);
+        // }
+
+
+        if(Auth::check()){
+            if(Auth::user()->role_id == 2){
+                return $next($request);
+            }elseif(Auth::user()->role_id == 3){
+                return $next($request);
             }
         }else{
-            return $next($request);
+            return redirect()->route('mgt.show.login');
         }
+
+
+
+
     }
 }
